@@ -1,4 +1,48 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
+<div *ngIf='!sessionService.user'>
+<header class="header-6">
+    <div class="branding">
+        <a [routerLink]="['/']" class="nav-link">
+            <span class="title">FreaksForum</span>
+        </a>
+    </div>
+    <form class="search">
+        <label for="search_input">
+            <input id="search_input" type="text" placeholder="Search Something">
+        </label>
+    </form>
+    <div class="header-actions">
+        <a href="..." class="nav-link nav-icon">
+            <clr-icon shape="cog"></clr-icon>
+        </a>
+    </div>
+</header>
+<nav class="subnav">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/']">PS4</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']">XBOX</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']">NINTENDO</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']">STEAM</a>
+        </li>
+    </ul>
+</nav>
+</div>
+
+<ul>
+    <li *ngIf="!sessionService.user"><a [routerLink]="['/signup']">Sign up</a></li>
+    <li *ngIf="!sessionService.user"><a [routerLink]="['/login']">Log in</a></li>
+    <li *ngIf="sessionService.user"><a [routerLink]="['/']" (click)="logout()">Log out</a></li>
+  </ul>
+
 <router-outlet></router-outlet>
+
+
 

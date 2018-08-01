@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -13,6 +12,9 @@ import { routes } from './routes';
 import { FormsModule } from '@angular/forms';
 import { SessionService } from '../services/session';
 import { HttpModule } from '@angular/http';
+import { ClarityModule } from '@clr/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PrivateComponent } from './private/private.component';
 
 
 @NgModule({
@@ -22,14 +24,17 @@ import { HttpModule } from '@angular/http';
     SignupComponent,
     NewCommentComponent,
     DetailCommentComponent,
-    ListCommentComponent
+    ListCommentComponent,
+    PrivateComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpModule
+    HttpModule,
+    ClarityModule,
+    BrowserAnimationsModule
   ],
   providers: [SessionService],
   bootstrap: [AppComponent]

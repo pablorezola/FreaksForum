@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionService } from '../services/session';
-
+interface UserObject{
+  username:string
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,11 +12,15 @@ import { SessionService } from '../services/session';
 export class AppComponent {
   title = 'FreaksForum';
 
-  constructor(private session:SessionService, private router:Router){}
+  user:UserObject;
+
+  constructor(private sessionService:SessionService, private router:Router){
+    this.user=this.sessionService.user;
+  }
 
   logout(){
 
-    this.session.logout().subscribe();
+    this.sessionService.logout().subscribe();
     this.router.navigate(['/'])
   }
   
