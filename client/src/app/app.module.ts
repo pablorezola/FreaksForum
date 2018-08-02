@@ -17,6 +17,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrivateComponent } from './private/private.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { GamesComponent } from './games/games.component';
+import { GameService } from '../services/api';
+import { PlaystationComponent } from './playstation/playstation.component';
+import { XboxComponent } from './xbox/xbox.component';
+import { NintendoComponent } from './nintendo/nintendo.component';
+import { SteamComponent } from './steam/steam.component';
 
 
 @NgModule({
@@ -29,7 +34,11 @@ import { GamesComponent } from './games/games.component';
     ListCommentComponent,
     PrivateComponent,
     DialogComponent,
-    GamesComponent
+    GamesComponent,
+    PlaystationComponent,
+    XboxComponent,
+    NintendoComponent,
+    SteamComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +49,14 @@ import { GamesComponent } from './games/games.component';
     ClarityModule,
     BrowserAnimationsModule
   ],
-  providers: [SessionService],
-  bootstrap: [AppComponent]
+
+  providers: [
+    SessionService,
+    GameService
+  ],
+  
+  bootstrap: [AppComponent],
+
+  
 })
 export class AppModule { }

@@ -19,9 +19,9 @@ mongoose
     useMongoClient: true
   })
   .then(() => {
-    console.log(`Connected to Mongo on ${DBURL}`)
+    console.log(`Connected to Mongo on ${DBURL}`);
   }).catch(err => {
-    console.error('Error connecting to mongo', err)
+    console.error('Error connecting to mongo', err);
   });
 
 const app_name = require('./package.json').name;
@@ -84,5 +84,9 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const authRouter = require('./routes/auth');
 
 app.use('/api/auth',authRouter);
+
+const gameRoute = require('./routes/game');
+
+app.use('/game',gameRoute);
 
 module.exports = app;

@@ -2,7 +2,7 @@
 
 <header class="header-6">
     <div class="branding">
-        <a [routerLink]="['/']" class="nav-link">
+        <a [routerLink]="['...']" class="nav-link">
             <span class="title">FreaksForum</span>
         </a>
     </div>
@@ -27,6 +27,9 @@
                 <li *ngIf="sessionService.user">
                     <a [routerLink]="['/']" (click)="logout()">Log out</a>
                 </li>
+                <li *ngIf="sessionService.user">
+                    <a [routerLink]="['/private']">Private</a>
+                </li>
             </clr-dropdown-menu>
         </clr-dropdown>
     </div>
@@ -34,16 +37,16 @@
 <nav class="subnav">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/']">PS4</a>
+            <a class="nav-link" [routerLink]="['/ps4']">PS4</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']">XBOX</a>
+            <a class="nav-link" [routerLink]="['/xbox']">XBOX</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']">NINTENDO</a>
+            <a class="nav-link" [routerLink]="['/nintendo']">NINTENDO</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']">STEAM</a>
+            <a class="nav-link" [routerLink]="['/steam']">STEAM</a>
         </li>
     </ul>
 </nav>

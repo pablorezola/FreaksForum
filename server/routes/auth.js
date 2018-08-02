@@ -13,9 +13,9 @@ const login = (req, user) => {
       }else{
         resolve(user);
       }
-    })
-  })
-}
+    });
+  });
+};
 
 
 // SIGNUP
