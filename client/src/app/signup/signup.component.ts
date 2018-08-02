@@ -22,7 +22,9 @@ signup(username: string, password: string) {
     this.sessionService.signup(username,password).subscribe( (user:any) =>{
       console.log(`WELCOME USER ${user.username}, register OK`);
       console.log(user);
-      this.router.navigate(['/login']);
+      if (user == null){this.router.navigate(['/signup'])
+    } else {
+      this.router.navigate(['/login'])};
   });
 } 
 

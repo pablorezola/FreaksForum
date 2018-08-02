@@ -7,5 +7,13 @@
   <input type="password" [(ngModel)]="password" name="password"/>
 
   <button (click)="login(username,password)"> Log in </button>
+  <clr-alert [clrAlertType]="'alert-success'" (clrAlertClosedChange)="onClose()">
+      <div class="alert-item">
+          <span class="alert-text">
+              you have login!
+          </span>
+      </div>
+  </clr-alert>
+  <div>{{closeMessage}}</div>
 </form>
 <p class="error"> {{ error }} </p>

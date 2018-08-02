@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   username:string;
   password:string;
   error:string;
+  closeMessage: string = "";
+
 
   constructor(private sessionService:SessionService, private router: Router) { }
 
@@ -19,10 +21,22 @@ export class LoginComponent implements OnInit {
   }
   
   login(username:string, password:string){
-    this.sessionService.login(username,password).subscribe( user => {
-      console.log(user);
-      this.router.navigate(['/private']);
-    });
+    console.log(username, password)
+    if(!username || !password ) { this.error = "campos obligatorios"
+    } else {
+      this.sessionService.login(username,password).subscribe( user => {
+        console.log("login")
+        console.log(user);
+        if (user == null){
+          this.error = "error de login"
+      } else {
+         this.router.navigate(['/private'])};
+      });
+
+    }
   }
+  onClose() {
+    this.closeMessage = "The alert has been closed";
+    }
 
 }

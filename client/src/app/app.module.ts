@@ -15,6 +15,8 @@ import { HttpModule } from '@angular/http';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrivateComponent } from './private/private.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { GamesComponent } from './games/games.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { PrivateComponent } from './private/private.component';
     NewCommentComponent,
     DetailCommentComponent,
     ListCommentComponent,
-    PrivateComponent
+    PrivateComponent,
+    DialogComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,43 +1,31 @@
-<form>
-    <h2> Sign up Form </h2>
-    <label> Username </label>
-    <input type="text" [(ngModel)]="username" name="username"/>
-    <br>
-    <label> Password </label>
-    <input type="password" [(ngModel)]="password" name="password"/>
-
-    <button (click)="signup(username, password)"> SIGN UP </button>
-  </form>
-  <p class="error"> {{ error }} </p>
-
-
-
-
-
-<!-- <div class="container">
-  <br />
-  <form (ngSubmit)='signup()' [formGroup]='signupForm' novalidate class="form">
-      <label> Username </label>
-      <input formControlName='Username' type="text" class="form-control" placeholder="Username" />
-      <div class="alert  alert-danger" *ngIf="signupForm.get('Username').hasError('required') && signupForm.get('Username').touched">
-         Username is required
-      </div>
-      <br>
-      emailform 
-      <label> Password </label>
-      <input formControlName='password' type="password" class="form-control" placeholder="Enter Password" />
-      <div class="alert  alert-danger" *ngIf=" !signupForm.get('password').valid && signupForm.get('email').touched">
-          Password is required and should be more than 5 characters
-      </div>
-      <br>
-      <label> Phone Number </label>
-      <input formControlName='phonenumber' type="text" class="form-control" placeholder="Enter Phone Number" />
-  <div class="alert  alert-danger" *ngIf="signupForm.get('phonenumber').hasError('required') && signupForm.get('phonenumber').touched">
-      Phone Number is required
-  </div>
-  <br>
-      <button [disabled]='signupForm.invalid' class="btn">Sign up</button>
-  </form>
-  <p class="error"> {{ error }} </p>
+<h1> Sign up in {{title}}</h1>
+<div class="sign">
+    <div class="frm">
+    <form>
+        <label> Username </label>
+        <input type="text" [(ngModel)]="username" name="username" />
+        <br>
+        <label> Password </label>
+        <input type="password" [(ngModel)]="password" name="password" />
+        <br>
+        <label> Email</label>
+        <input type="email" [(ngModel)]="email" name="email" />
+        <br>
+        <label>Date of Birth</label>
+        <input type="date" [(clrDate)]="date">
+        <button class="btn" (click)="signup(username, password)"> SIGN UP </button>
+    </form>
 </div>
- -->
+    <div class="why">
+        <h2>Why {{title}}?</h2>
+        <h3>Community</h3> 
+        <p>Express your opinion in the biggest videogame forum!</p>
+        <h3>Store your favourite videogames!</h3>
+        <p>Don't skip any information about your videogames</p>
+        <h3>Your own Profile</h3>
+        <p>Customize your profile, meet new people and share your passion!
+        </p>
+    </div>
+</div>
+<p class="error"> {{ error }} </p>
+
