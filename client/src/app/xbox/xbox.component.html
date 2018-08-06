@@ -1,3 +1,10 @@
-<p>
-  xbox works!
-</p>
+
+<div *ngIf='sessionService.user && games'>
+  
+  <div *ngFor='let game of games.body'>
+    {{game.name | json}}
+  </div>
+ 
+{{games.body | json}}
+
+</div>

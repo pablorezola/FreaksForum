@@ -2,7 +2,7 @@
 
 <header class="header-6">
     <div class="branding">
-        <a [routerLink]="['...']" class="nav-link">
+        <a [routerLink]="['/']" class="nav-link">
             <span class="title">FreaksForum</span>
         </a>
     </div>
@@ -50,5 +50,32 @@
         </li>
     </ul>
 </nav>
+ 
+
+<div *ngIf="sessionService.user">
+
+
+    <h1>
+        Welcome  {{ sessionService.user.username }}
+    </h1>
+    
+    <a [routerLink]="['comments/new']">Create new Thread</a>
+    <br>
+
+
+    <h1> Threads list </h1>
+    <div>
+      <div *ngFor="let comment of comments | async" class="thread-container">
+        <div class="header">
+          <h2>Title: {{ comment.title }} </h2>
+          <h4><span>Author:</span>{{comment._author.username}}</h4>
+        </div>
+        <div class="content">
+          <p> {{ comment.content }} </p>
+        </div>
+        <a [routerLink]="['comments', thread._id]"> Read more about the comment </a>
+      </div>
+    </div>
+</div>
 
 <router-outlet></router-outlet>

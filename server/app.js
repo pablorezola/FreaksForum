@@ -59,7 +59,7 @@ app.use(require('node-sass-middleware')({
 }));
 
 app.use(session({
-  secret: 'angular auth passport secret shh',
+  secret: 'forum-app',
   resave: true,
   saveUninitialized: true,
   cookie: {
@@ -81,12 +81,14 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
-const authRouter = require('./routes/auth');
 
+
+const authRouter = require('./routes/auth');
 app.use('/api/auth',authRouter);
 
 const gameRoute = require('./routes/game');
-
 app.use('/game',gameRoute);
+
+
 
 module.exports = app;

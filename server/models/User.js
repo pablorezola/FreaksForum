@@ -4,8 +4,11 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password: String,
-  email: String,
-  Birth: Date
+  email: {type:String, required:true},
+  birth: Date,
+  gender:{type:String, enum:["Man","Woman",""], default:""},
+  profilePhoto:{type:String,default:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/1024px-Imagen_no_disponible.svg.png"},
+  status:{type:String, default:""}
 }, {
   timestamps: {
     createdAt: 'created_at',

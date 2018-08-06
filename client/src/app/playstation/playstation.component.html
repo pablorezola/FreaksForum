@@ -1,3 +1,9 @@
-<p>
-  playstation works!
-</p>
+<div *ngIf='sessionService.user && games'>
+  
+  <div *ngFor='let game of games'>
+
+    {{game.games | json }}
+  </div>
+ 
+</div>
+

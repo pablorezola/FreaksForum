@@ -20,11 +20,13 @@ const login = (req, user) => {
 
 // SIGNUP
 router.post('/signup', (req, res, next) => {
+  
+  const {username, password, email, birth} = req.body;
 
-  const {username, password} = req.body;
+  
 
-  // Check for non empty user or password
-  if (!username || !password){
+  // Check for non empty credentials
+  if (!username || !password || !email || birth<18){
     next(new Error('You must provide valid credentials'));
   }
 
@@ -38,10 +40,12 @@ router.post('/signup', (req, res, next) => {
 
     return new User({
       username,
+      email: email,
+      birth: birth,
       password: hashPass
     }).save();
   })
-  .then( savedUser => login(req, savedUser)) // Login the user using passport
+  .then( savedUser => { console.log(savedUser);login(req, savedUser)}) // Login the user using passport
   .then( user => res.json({status: 'signup & login successfully', user})) // Answer JSON
   .catch(e => next(e));
 });

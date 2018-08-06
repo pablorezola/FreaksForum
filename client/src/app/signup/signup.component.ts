@@ -18,8 +18,8 @@ export class SignupComponent implements OnInit {
 }
 
 
-signup(username: string, password: string) {
-    this.sessionService.signup(username,password).subscribe( (user:any) =>{
+signup(username: string, password: string, email: string, birth: Date) {
+    this.sessionService.signup(username,password,email,birth).subscribe( (user:any) =>{
       console.log(`WELCOME USER ${user.username}, register OK`);
       console.log(user);
       if (user == null){this.router.navigate(['/signup'])
@@ -31,14 +31,7 @@ signup(username: string, password: string) {
 }
 
 
-/* signupForm: FormGroup;
-import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
-ngOnInit
-this.signupForm = new FormGroup({
-  email: new FormControl(null, [Validators.required, Validators.minLength(4)]),
-  password: new FormControl(null, [Validators.required, Validators.maxLength(8)]),
-  phonenumber: new FormControl(null, [Validators.required])
- */
+
 
 
 

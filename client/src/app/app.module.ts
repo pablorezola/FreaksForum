@@ -15,13 +15,13 @@ import { HttpModule } from '@angular/http';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrivateComponent } from './private/private.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { GamesComponent } from './games/games.component';
 import { GameService } from '../services/api';
 import { PlaystationComponent } from './playstation/playstation.component';
 import { XboxComponent } from './xbox/xbox.component';
 import { NintendoComponent } from './nintendo/nintendo.component';
 import { SteamComponent } from './steam/steam.component';
+import {CommentService} from '../services/comments'
+ 
 
 
 @NgModule({
@@ -33,8 +33,6 @@ import { SteamComponent } from './steam/steam.component';
     DetailCommentComponent,
     ListCommentComponent,
     PrivateComponent,
-    DialogComponent,
-    GamesComponent,
     PlaystationComponent,
     XboxComponent,
     NintendoComponent,
@@ -50,9 +48,13 @@ import { SteamComponent } from './steam/steam.component';
     BrowserAnimationsModule
   ],
 
+
+
   providers: [
     SessionService,
-    GameService
+    GameService,
+    CommentService
+    
   ],
   
   bootstrap: [AppComponent],

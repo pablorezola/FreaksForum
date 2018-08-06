@@ -26,42 +26,32 @@ export class GameService {
 
   isPs4() {
     return this.http.get(`${this.BASE_URL}/game`).pipe(map((res) => { 
+        console.log(res);
      return res.json(); 
     }))
 
 
-    /* igdb("0675154b1f690583c9a861cc1e81e214").scrollAll(this.API_URL) // Pass URL
-   .then(response => { 
-         // response = Array of all game objects
-     });  */
-
   }
-  /* 
+  
      isXbox(){
-      igdb("0675154b1f690583c9a861cc1e81e214").scrollAll(this.API_URL2) // Pass URL
-      .then(response => {
-          // response = Array of all game objects
-      });
-  
-  
+        return this.http.get(`${this.BASE_URL}/game`).pipe(map((res) => { 
+            return res.json(); 
+           }))
+      
      }
   
      isNintento(){
-      igdb("0675154b1f690583c9a861cc1e81e214").scrollAll(this.API_URL3) // Pass URL
-      .then(response => {
-          // response = Array of all game objects
-      });
-  
+        return this.http.get(`${this.BASE_URL}/game`).pipe(map((res) => { 
+            return res.json(); 
+           }))
   
      }
   
      isSteam(){
-      igdb("0675154b1f690583c9a861cc1e81e214").scrollAll(this.API_URL4) // Pass URL
-      .then(response => {
-          // response = Array of all game objects
-      });
+        return this.http.get(`${this.BASE_URL}/game`).pipe(map((res) => { 
+            return res.json(); 
+           }))   
   
-  
-     }  */
+     }  
 
 }
