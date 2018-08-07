@@ -9,6 +9,7 @@
             <input id="search_input" type="text" placeholder="Search Something">
         </label>
     </form>
+
     <div class="header-actions">
         <clr-dropdown>
             <button class="nav-icon" clrDropdownTrigger>
@@ -47,18 +48,22 @@
             <a class="nav-link" [routerLink]="['/steam']">STEAM</a>
         </li>
     </ul>
+
+    <clr-button-group *ngIf="sessionService.user" class="actions">
+        <clr-button>
+            <a [routerLink]="['comments/new']">Create new Thread</a>
+        </clr-button>
+        <clr-button>
+            <a [routerLink]="['comments/list']"> Thread list</a>
+        </clr-button>
+    </clr-button-group>
 </nav>
 
 <div *ngIf="sessionService.user">
     <h1>
         Welcome {{ sessionService.user.username }}
     </h1>
-    <a [routerLink]="['comments/new']">Create new Thread</a>
-    <br>
-    <a [routerLink]="['comments/list']"> Thread list</a>
-    <br>
-    <a [routerLink]="['comments/:id']"> Read more</a>
-    <br>
+
 </div>
 
 <router-outlet></router-outlet>

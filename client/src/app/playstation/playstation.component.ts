@@ -11,8 +11,8 @@ export class PlaystationComponent implements OnInit {
   constructor(private sessionService: SessionService, private Gs: GameService) { }
 
   ngOnInit() {
-    this.Gs.isPs4().subscribe(res => {
-      this.games = res;
+    this.Gs.isPs4().subscribe(arr1 => {
+      this.games = arr1.body;
      })
   }
 

@@ -20,7 +20,8 @@ import { PlaystationComponent } from './playstation/playstation.component';
 import { XboxComponent } from './xbox/xbox.component';
 import { NintendoComponent } from './nintendo/nintendo.component';
 import { SteamComponent } from './steam/steam.component';
-import {CommentService} from '../services/comments'
+import {CommentService} from '../services/comments';
+import { GamesComponent } from './games/games.component'
 
 
 
@@ -36,7 +37,8 @@ import {CommentService} from '../services/comments'
     PlaystationComponent,
     XboxComponent,
     NintendoComponent,
-    SteamComponent
+    SteamComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,

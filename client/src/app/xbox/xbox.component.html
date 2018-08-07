@@ -1,10 +1,10 @@
 
 <div *ngIf='sessionService.user && games'>
   
-  <div *ngFor='let game of games.body'>
-    {{game.name | json}}
+  <div *ngFor='let game of games'>
+    <p>{{game.name}} - {{game.summary}} - {{game.rating}}</p>
   </div>
  
-{{games.body | json}}
+
 
 </div>

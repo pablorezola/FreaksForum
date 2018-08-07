@@ -1,3 +1,8 @@
-<p>
-  steam works!
-</p>
+<div *ngIf='sessionService.user && games'>
+  
+    <div *ngFor='let game of games'>
+      <p>{{game.name}} - {{game.summary}} - {{game.rating}}</p>
+     
+    </div>
+   
+  </div>

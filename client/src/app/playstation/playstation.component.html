@@ -1,8 +1,8 @@
 <div *ngIf='sessionService.user && games'>
   
   <div *ngFor='let game of games'>
-
-    {{game.games | json }}
+    <p>{{game.name}} - {{game.summary}} - {{game.rating}}</p>
+   
   </div>
  
 </div>

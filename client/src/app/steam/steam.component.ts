@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../../services/session';
+import { GameService } from '../../services/api';
 
 @Component({
   selector: 'app-steam',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./steam.component.css']
 })
 export class SteamComponent implements OnInit {
-
-  constructor() { }
+  games: any;
+  constructor(private sessionService: SessionService, private Gs: GameService) { }
 
   ngOnInit() {
+    this.Gs.isSteam().subscribe(arr4 => {
+      this.games = arr4.body;
+     })
   }
 
 }

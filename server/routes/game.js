@@ -1,33 +1,154 @@
 const express = require('express');
 const router = express.Router();
-const axios = require("axios");
 const igdb = require('igdb-api-node').default;
-const client = igdb('0675154b1f690583c9a861cc1e81e214');
+const key = process.env.KEY;
+const client = igdb(key);
 
 
+router.get('/ps4', (req, res, next) => {
+    const arr1 = [];
 
-router.get('/', (req, res, next) => {
-    /* let arr = [];
-    axios.get(`https://api-2445582011268.apicast.io/platforms/48`, {
-        headers: { 'user-key': '0675154b1f690583c9a861cc1e81e214' }
-    }).then(object => {
-        console.log(object.data[0].games);
-            // Promise.all(
-            //     object.data[0].games.map(item => axios.get(`https://api-2445582011268.apicast.io/games/${item}`, {
-            //         headers: { 'user-key': '0675154b1f690583c9a861cc1e81e214' }
-            //     }))
-            // ).then(result => console.log(result))
-            //     .catch(error => {
-            //         console.log(error);
-            //         throw error;
-            //     });
-    }).catch(error => {
-                 console.log(error);
-                 throw error;
-             });;
- */
-});
+    //PS4
 
+    client.games({
+        ids: [
+            2033,
+            1979,
+            28513,
+            4,
+            17907,
+            24868,
+            15852,
+            4656,
+            7886,
+            16130,
+            11199,
+            1184,
+            1906
+        ]
+    }, [
+            'name',
+            'summary',
+            'rating',
+            'websites',
+            'screenshots',
+        ]).then(response => {
+            console.log(response.body)
+            response.body.forEach(element => {
+
+            });
+            arr1.push(response);
+            res.json(response);
+        }).catch(error => {
+            throw error;
+        });
+    });
+    //XBOX ONE
+    router.get('/xbox', (req, res, next) => {
+        const arr2 = [];
+    client.games({
+        ids: [
+            27395,
+            18645,
+            75932,
+            18869,
+            20454,
+            79740,
+            75867,
+            54167,
+            38782,
+            14232,
+            83765,
+            4796,
+            83776,
+            36856
+        ]
+    }, [
+            'name',
+            'summary',
+            'rating',
+            'websites',
+            'screenshots',
+        ]).then(response => {
+            response.body.forEach(element => {
+            });
+            arr2.push(response);
+            res.json(response);
+        }).catch(error => {
+            throw error;
+        });
+    });
+    //N.Switch
+    router.get('/switch', (req, res, next) => {
+        const arr3 = [];
+    client.games({
+        ids: [
+            6556,
+            11070,
+            86361,
+            38983,
+            64011,
+            11529,
+            19175,
+            28409,
+            7767,
+            1408,
+            1404,
+            27081,
+            19109,
+            27298,
+            47576,
+            26165,
+        ]
+    }, [
+            'name',
+            'summary',
+            'rating',
+            'websites',
+            'screenshots',
+        ]).then(response => {
+            response.body.forEach(element => {
+
+            });
+            arr3.push(response);
+            res.json(response);
+        }).catch(error => {
+            throw error;
+        });
+    });
+
+
+    // Steam
+    router.get('/steam', (req, res, next) => {
+        const arr4 = [];
+    client.games({
+        ids: [
+            26868,
+            27140,
+            26363,
+            27194,
+            27207,
+            9066,
+            25295,
+            27337,
+            27339,
+            8767,
+        ]
+    }, [
+            'name',
+            'summary',
+            'rating',
+            'websites',
+            'screenshots',
+        ]).then(response => {
+            response.body.forEach(element => {
+            });
+            arr4.push(response);
+            res.json(response);
+        }).catch(error => {
+            throw error;
+        });
+    });
 
 
 
