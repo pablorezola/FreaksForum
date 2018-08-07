@@ -1,18 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import {CommentService} from '../../services/comments'
+import {CommentService} from '../../services/comments';
+import { ActivatedRoute, Router } from "../../../node_modules/@angular/router";
 import { Observable } from 'rxjs';
+import { SessionService } from '../../services/session';
 @Component({
   selector: 'app-list-comment',
   templateUrl: './list-comment.component.html',
   styleUrls: ['./list-comment.component.css']
 })
 export class ListCommentComponent implements OnInit {
-  threads:Observable<Array<Object>>
+  comments:Observable<Array<Object>>;
 
-  constructor(private commentService: CommentService) { }
+  constructor(private commentService: CommentService, private router: Router,private sessionService:SessionService) { 
+
+  }
 
   ngOnInit() {
-    this.threads = this.commentService.getCommentList();
+    this.getComments();
+  }
+
+  getComments(){
+    this.commentService.getCommentList().subscribe(comments => {
+      this.comments=comments;
+  })
+  }
+
+  deleteComment(id) {
+    this.commentService
+      .removeComment(id)
+      .subscribe(() => this.getComments());
   }
 
 }

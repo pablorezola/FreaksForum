@@ -6,7 +6,7 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-const commentRoutes = require('./comments/index.controller');
+const commentRoutes = require('./comments/comments.controller');
 router.use('/comments', commentRoutes);
 
 module.exports = router;

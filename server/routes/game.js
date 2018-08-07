@@ -7,7 +7,7 @@ const client = igdb('0675154b1f690583c9a861cc1e81e214');
 
 
 router.get('/', (req, res, next) => {
-    let arr = [];
+    /* let arr = [];
     axios.get(`https://api-2445582011268.apicast.io/platforms/48`, {
         headers: { 'user-key': '0675154b1f690583c9a861cc1e81e214' }
     }).then(object => {
@@ -25,7 +25,7 @@ router.get('/', (req, res, next) => {
                  console.log(error);
                  throw error;
              });;
-
+ */
 });
 
 

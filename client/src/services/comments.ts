@@ -5,28 +5,42 @@ import { map } from 'rxjs/operators';
 
 
 @Injectable()
-export class CommentService {   
-BASE_URL:string = environment.BASEURL;    
-options:object = {withCredentials:true};
+export class CommentService {
+    BASE_URL: string = environment.BASEURL;
+    options: object = { withCredentials: true };
 
-constructor(private http:Http) { }
+    constructor(private http: Http) { }
 
-getCommentList(){
-    return this.http.get(`${this.BASE_URL}/comments/comments`)
-    .pipe(map(((res) => res.json())));
-}
+    getCommentList() {
+        return this.http.get(`${this.BASE_URL}/comments/`)
+            .pipe(map(((res) => res.json())));
+    }
 
-addNewComemnt(){
+    addNewComemnt(comment) {
+        return this.http.post(`${this.BASE_URL}/comments/new`, comment, this.options)
+            .pipe(map((res) => res.json()));
 
-}
+    }
 
-getSingleComment(){
+    getSingleComment(id) {
+        return this.http.get(`${this.BASE_URL}/comments/:id/${id}`)
+            .pipe(map((res) => res.json()));
+
+
+    }
+
+    addReply(id, reply) {
+        return this.http.post(`${this.BASE_URL}/comments/${id}/replies`, { content: reply }, this.options)
+            .pipe(map((res) => res.json()));
+
+    }
+
+    removeComment(id) {
+        return this.http
+          .delete(`${this.BASE_URL}/comments/${id}`)
+          .pipe(map(res => res.json()));
+      } 
     
-}
-
-addReply() {
-
-}
 
 
 }

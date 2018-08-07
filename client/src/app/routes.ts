@@ -12,7 +12,7 @@ import {SteamComponent} from './steam/steam.component';
 
 
 export const routes: Routes = [
-    { path: '', component: ListCommentComponent },
+    { path: 'comments/list', component: ListCommentComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login', component: LoginComponent },
     { path: 'comments/new', component: NewCommentComponent },

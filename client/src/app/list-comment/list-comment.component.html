@@ -1,1 +1,10 @@
-  
+
+<div *ngIf="sessionService.user">
+      <div *ngFor="let comment of comments" >
+      {{comment._author.username}}
+      {{comment.title}}
+      {{comment.content}}
+      {{comment.date}}
+      <button (click)="deleteComment(comment._id)"> Delete  Comment </button>
+      </div>
+</div>

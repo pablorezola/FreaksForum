@@ -19,10 +19,11 @@ export class SignupComponent implements OnInit {
 
 
 signup(username: string, password: string, email: string, birth: Date) {
+  //console.log(birth) hacer la comparación de edad
     this.sessionService.signup(username,password,email,birth).subscribe( (user:any) =>{
-      console.log(`WELCOME USER ${user.username}, register OK`);
-      console.log(user);
-      if (user == null){this.router.navigate(['/signup'])
+      //console.log(`WELCOME USER ${user.username}, register OK`);
+      //console.log(user);
+      if (user == null ){this.router.navigate(['/signup'])
     } else {
       this.router.navigate(['/login'])};
   });

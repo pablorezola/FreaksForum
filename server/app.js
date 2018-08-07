@@ -89,6 +89,8 @@ app.use('/api/auth',authRouter);
 const gameRoute = require('./routes/game');
 app.use('/game',gameRoute);
 
+const indexRoutes = require('./routes/index');
+app.use('/', indexRoutes);
 
 
 module.exports = app;

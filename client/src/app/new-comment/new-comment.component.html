@@ -1,3 +1,26 @@
-<p>
-  new-comment works!
-</p>
+<div class="modal">
+    <form (ngSubmit)="addComment(threadForm)" #threadForm="ngForm">
+        <div class="modal-dialog fadeDown in" role="dialog">
+                 <div class="modal-content">
+            <div class="modal-header">
+                <h1> New Comment </h1>
+                <h3 class="modal-title"></h3>
+                <label> Title </label>
+                <input type="text" [(ngModel)]="title" name="title"/>
+            </div>
+            <div class="modal-body">
+                <label> Content </label>
+                <input type="text" [(ngModel)]="content" name="content"/>
+            </div>
+            <div class="modal-footer">
+               <a> <button  [routerLink]="['/comments/list']">Cancel</button></a>
+                <button class="btn btn-primary" type="submit">Ok</button>
+            </div>
+        </div>
+    </div>
+  </form> 
+  <p class="error"> {{ error }} </p>
+</div>
+<div class="modal-backdrop fade in"></div>
+
+

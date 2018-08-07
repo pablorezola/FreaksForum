@@ -21,7 +21,7 @@ import { XboxComponent } from './xbox/xbox.component';
 import { NintendoComponent } from './nintendo/nintendo.component';
 import { SteamComponent } from './steam/steam.component';
 import {CommentService} from '../services/comments'
- 
+
 
 
 @NgModule({
@@ -48,17 +48,13 @@ import {CommentService} from '../services/comments'
     BrowserAnimationsModule
   ],
 
-
-
   providers: [
     SessionService,
     GameService,
-    CommentService
-    
+    CommentService,
   ],
   
   bootstrap: [AppComponent],
-
   
 })
 export class AppModule { }
