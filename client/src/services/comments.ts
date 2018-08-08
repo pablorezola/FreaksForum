@@ -40,7 +40,5 @@ export class CommentService {
           .delete(`${this.BASE_URL}/comments/${id}`)
           .pipe(map(res => res.json()));
       } 
-    
-
 
 }

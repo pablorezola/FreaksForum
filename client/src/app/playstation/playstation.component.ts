@@ -12,6 +12,7 @@ export class PlaystationComponent implements OnInit {
 
   ngOnInit() {
     this.Gs.isPs4().subscribe(arr1 => {
+      console.log(arr1.body);
       this.games = arr1.body;
      })
   }

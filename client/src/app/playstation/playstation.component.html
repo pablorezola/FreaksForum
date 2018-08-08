@@ -1,7 +1,21 @@
 <div *ngIf='sessionService.user && games'>
   
   <div *ngFor='let game of games'>
-    <p>{{game.name}} - {{game.summary}} - {{game.rating}}</p>
+    <p>{{game.name}} - {{game.summary}}</p>
+    <div *ngIf="game.rating">
+      <p>{{game.rating}}</p>
+      <p>tiene</p>
+    </div>
+    <div *ngIf="!game.rating">
+      <p>Rating: Desconocido</p>
+    </div>
+
+    <div *ngIf="game.screenshots">
+      <div *ngFor="let screenshot of game.screenshots">
+       <img src="{{screenshot.url}}">
+      </div>
+
+    </div>
    
   </div>
  

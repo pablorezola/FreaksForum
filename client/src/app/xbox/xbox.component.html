@@ -3,8 +3,14 @@
   
   <div *ngFor='let game of games'>
     <p>{{game.name}} - {{game.summary}} - {{game.rating}}</p>
+    
+    
+    <div *ngIf="game.screenshots">
+      <div *ngFor="let screenshot of game.screenshots">
+        <img src="{{screenshot.url}}">
+      </div>
+    </div>
+    
   </div>
- 
-
 
 </div>

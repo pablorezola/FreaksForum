@@ -22,18 +22,21 @@ export class DetailCommentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe( params => {
-      this.commentService.getSingleComment(params.id)
-      .subscribe( comment => this.comment= comment);
-    })
+    this.update();
     
   }
 
   newReply(id) {
     this.commentService.addReply(id, this.replyInfo).subscribe( 
-      comment => this.comment = comment
+      () => this.update()
     );
+    this.replyInfo.content = "";
   }  
-
+  update(){
+    this.route.params.subscribe( params => {
+      this.commentService.getSingleComment(params.id)
+      .subscribe( comment => {this.comment= comment; console.log(comment)});
+    })
+  }
 
 }

@@ -23,4 +23,9 @@
         <p>{{reply.content}}</p>
       </div>
     </div>
+    <div *ngIf="comment">
+      <div *ngFor="let replie of comment.replies">
+        <p>{{replie.content}}</p>
+      </div>
+    </div>
   </div>
