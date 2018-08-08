@@ -73,7 +73,7 @@ import 'core-js/es7/reflect';
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
-//(window as any).global = window //copiado de MARC
+(window as any).global = window //copiado de MARC
 
 /***************************************************************************************************
  * APPLICATION IMPORTS

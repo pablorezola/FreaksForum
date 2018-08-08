@@ -1,0 +1,11 @@
+
+<div *ngIf='sessionService.user'>
+<ul>
+    <li *ngFor="let message of chatService.messages">
+      <b>From {{message.origin}}: </b> <span>{{message.content}}</span>
+    </li>
+  </ul>
+  <input [(ngModel)]="chatBox">
+  <button (click)="chatService.sendMessage(chatBox); chatBox=''">Send</button>
+
+</div>

@@ -42,7 +42,7 @@
             <a class="nav-link" [routerLink]="['/xbox']">XBOX</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/nintendo']">NINTENDO</a>
+            <a class="nav-link" [routerLink]="['/switch']">NINTENDO</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" [routerLink]="['/steam']">STEAM</a>
@@ -50,6 +50,9 @@
     </ul>
 
     <clr-button-group *ngIf="sessionService.user" class="actions">
+        <clr-button>
+            <a [routerLink]="['/lobby']"> Lobby ChatRoom</a>
+        </clr-button>
         <clr-button>
             <a [routerLink]="['comments/new']">Create new Thread</a>
         </clr-button>

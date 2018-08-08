@@ -10,9 +10,11 @@ import {XboxComponent} from './xbox/xbox.component';
 import {NintendoComponent} from './nintendo/nintendo.component';
 import {SteamComponent} from './steam/steam.component';
 import {GamesComponent} from './games/games.component';
+import {LobbyComponent} from './lobby/lobby.component';
 
 export const routes: Routes = [
     {path: 'games', component: GamesComponent},
+    {path: 'lobby', component: LobbyComponent},
     { path: 'comments/list', component: ListCommentComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login', component: LoginComponent },
@@ -21,7 +23,7 @@ export const routes: Routes = [
     { path: 'private', component: PrivateComponent },
     { path: 'ps4', component: PlaystationComponent },
     { path: 'xbox', component: XboxComponent },
-    { path: 'nintendo', component: NintendoComponent },
+    { path: 'switch', component: NintendoComponent },
     { path: 'steam', component: SteamComponent }
 
 ];

@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -22,7 +23,8 @@ import { NintendoComponent } from './nintendo/nintendo.component';
 import { SteamComponent } from './steam/steam.component';
 import {CommentService} from '../services/comments';
 import { GamesComponent } from './games/games.component'
-
+import { ChatService } from '../services/chat.service';
+import { LobbyComponent } from './lobby/lobby.component';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { GamesComponent } from './games/games.component'
     XboxComponent,
     NintendoComponent,
     SteamComponent,
-    GamesComponent
+    GamesComponent,
+    LobbyComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { GamesComponent } from './games/games.component'
     SessionService,
     GameService,
     CommentService,
+    ChatService
   ],
   
   bootstrap: [AppComponent],

@@ -6,49 +6,39 @@ const client = igdb(key);
 
 
 router.get('/ps4', (req, res, next) => {
-    const arr1 = [];
 
     //PS4
-
+    client.games.toString()
     client.games({
         ids: [
-            21933,
-            11776,
-            36796,
-            76258,
-            74384,
-            52676,
-            89991,
-            32859,
-            19042,
-            42941,
-            9536,
-            41614,
-            19880,
-            24221,
-            52717,
-            9637,
-            36798,
-            20391,
-            19250,
-            34894,
-            86388,
-            86389,
-            86268,
-            86347,
+            2033,
+            8500,
+            2957,
+            1979,
+            2920,
+            3152,
+            16735,
+            3256,
+            18655,
+            3094,
+            4,
+            16765,
+            6632,
+            4756,
+            4754,
+            1887,
+            6030,
+            4755,
+            21729,
+            4071
         ]
     }, [
             'name',
             'summary',
             'rating',
             'websites',
-            'screenshots',
+            'screenshots'
         ]).then(response => {
-            console.log(response.body)
-            response.body.forEach(element => {
-
-            });
-            arr1.push(response);
             console.log(response);
             res.json(response);
         }).catch(error => {
@@ -57,10 +47,10 @@ router.get('/ps4', (req, res, next) => {
 
         });
     });
-    //XBOX ONE
-    router.get('/xbox', (req, res, next) => {
-        const arr2 = [];
-    client.games({
+    // //XBOX ONE
+     router.get('/xbox', (req, res, next) => {
+     const arr2 = [];
+     client.games({
         ids: [
             20907,
             39046,
@@ -137,7 +127,7 @@ router.get('/ps4', (req, res, next) => {
     });
 
 
-    // Steam
+    // // Steam
     router.get('/steam', (req, res, next) => {
         const arr4 = [];
     client.games({
@@ -179,7 +169,7 @@ router.get('/ps4', (req, res, next) => {
         }).catch(error => {
             throw error;
         });
-    });
+     });
 
 
 
