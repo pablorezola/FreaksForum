@@ -10,16 +10,30 @@ import {CommentService} from '../../services/comments';
 })
 export class DetailCommentComponent implements OnInit {
   
+  comment: any;
+
+  replyInfo = {
+    title: '',
+    content: ''
+  }
   
   constructor(private commentService: CommentService,private route:ActivatedRoute,private sessionService:SessionService) { 
     
   }
 
   ngOnInit() {
+    this.route.params.subscribe( params => {
+      this.commentService.getSingleComment(params.id)
+      .subscribe( comment => this.comment= comment);
+    })
     
   }
 
-  
+  newReply(id) {
+    this.commentService.addReply(id, this.replyInfo).subscribe( 
+      comment => this.comment = comment
+    );
+  }  
 
 
 }

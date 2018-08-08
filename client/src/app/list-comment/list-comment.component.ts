@@ -31,4 +31,8 @@ export class ListCommentComponent implements OnInit {
       .subscribe(() => this.getComments());
   }
 
+  gotoCommentsDetail(id){
+    this.router.navigate(['comments', id]);
+  }
+
 }

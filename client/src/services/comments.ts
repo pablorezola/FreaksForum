@@ -23,7 +23,7 @@ export class CommentService {
     }
 
     getSingleComment(id) {
-        return this.http.get(`${this.BASE_URL}/comments/:id/${id}`)
+        return this.http.get(`${this.BASE_URL}/comments/${id}`)
             .pipe(map((res) => res.json()));
 
 

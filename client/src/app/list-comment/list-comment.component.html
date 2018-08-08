@@ -1,10 +1,11 @@
 
 <div *ngIf="sessionService.user">
       <div *ngFor="let comment of comments" >
-      {{comment._author.username}}
-      {{comment.title}}
-      {{comment.content}}
-      {{comment.date}}
+      Author: {{comment._author.username}}
+      Title:{{comment.title}}
+      Content:{{comment.content}}
+      Date: {{comment.date | date: "dd/MM/yyyy"}}
       <button (click)="deleteComment(comment._id)"> Delete  Comment </button>
+      <button  (click)="gotoCommentsDetail(comment._id)"> Read More </button>
       </div>
 </div>

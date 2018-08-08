@@ -1,5 +1,26 @@
-<p>
-  detail-comment works!
-</p>
 
-
+<div class="container" *ngIf="sessionService.user">
+    <div *ngIf="comment">
+      <div class="thread">
+        <h1>Title:  {{comment.title}}</h1>
+        <h2>Author:<span>{{comment._author.username}}</span>
+        </h2>
+        <p>Content: {{comment.content}}</p>
+      </div>
+  
+      <div class="comment-form" *ngIf="sessionService.user">
+        <h3>Reply:</h3>
+        <form>
+          <div class="form-group">
+            <textarea name="content" id="content" cols="30" rows="10" [(ngModel)]="replyInfo.content" class="form-control" placeholder="Comment"></textarea>
+          </div>
+          <button (click)="newReply(comment._id)" class="btn btn-primary btn-lg btn-block">New Reply</button>
+        </form>
+      </div>
+  
+      <div *ngFor="let reply of thread?.replies" class="comments">
+        <p class="comments-info">{{reply._author.username}} - {{reply.date | date:"dd/MM/yyyy" }}</p>
+        <p>{{reply.content}}</p>
+      </div>
+    </div>
+  </div>
