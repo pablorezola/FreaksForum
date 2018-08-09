@@ -9,7 +9,7 @@ import { GameService } from '../../services/api';
 })
 export class SteamComponent implements OnInit {
   games: any;
-  constructor(private sessionService: SessionService, private Gs: GameService) { }
+  constructor(public sessionService: SessionService, public Gs: GameService) { }
 
   ngOnInit() {
     this.Gs.isSteam().subscribe(arr4 => {

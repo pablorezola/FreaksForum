@@ -1,29 +1,28 @@
 <h1> Sign up in {{title}}</h1>
 <div class="sign">
-    <div class="frm">
     <form>
-        <label> Username </label>
-        <input type="text" [(ngModel)]="username" name="username" required />
+        <div class="frm"> 
+        <input type="text" [(ngModel)]="username" placeholder="Username" name="username" required />
         <br>
-        <label> Password </label>
-        <input type="password" [(ngModel)]="password" name="password" required />
+        <input type="password" [(ngModel)]="password" placeholder="Password" name="password" required />
         <br>
-        <label> Email</label>
-        <input type="email" [(ngModel)]="email" name="email" required />
+        <input type="email" [(ngModel)]="email"placeholder="Email" name="email" required />
         <br>
-        <label>Date of Birth</label>
-        <input type="date" clrDate [(ngModel)]="birth" name="birth" required >
+        <input type="date" clrDate [(ngModel)]="birth"placeholder="Birth" name="birth" required >
         <button class="btn" (click)="signup(username, password, email, birth)"> SIGN UP </button>
+    </div>
     </form>
-</div>
     <div class="why">
         <h2>Why {{title}}?</h2>
         <h3>Community</h3> 
         <p>Express your opinion in the biggest videogame forum!</p>
-        <h3>Store your favourite videogames!</h3>
+        <div>
+        <i class="fas fa-hdd"></i> <h3>Store your favourite videogames!</h3>
+        </div>
         <p>Don't skip any information about your videogames</p>
         <h3>Your own Profile</h3>
-        <p>Customize your profile, meet new people and share your passion!
+        <p>Customize your profile, meet new people <br>
+         and share your passion!
         </p>
     </div>
 </div>

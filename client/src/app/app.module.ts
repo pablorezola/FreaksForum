@@ -22,7 +22,6 @@ import { XboxComponent } from './xbox/xbox.component';
 import { NintendoComponent } from './nintendo/nintendo.component';
 import { SteamComponent } from './steam/steam.component';
 import {CommentService} from '../services/comments';
-import { GamesComponent } from './games/games.component'
 import { ChatService } from '../services/chat.service';
 import { LobbyComponent } from './lobby/lobby.component';
 
@@ -40,7 +39,6 @@ import { LobbyComponent } from './lobby/lobby.component';
     XboxComponent,
     NintendoComponent,
     SteamComponent,
-    GamesComponent,
     LobbyComponent
   ],
   imports: [

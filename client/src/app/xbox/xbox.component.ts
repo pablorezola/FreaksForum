@@ -8,7 +8,7 @@ import { GameService } from '../../services/api';
 })
 export class XboxComponent implements OnInit {
   games: any;
-  constructor(private sessionService:SessionService, public Gs:GameService) { }
+  constructor(public sessionService:SessionService, public Gs:GameService) { }
 
   ngOnInit() {
     this.Gs.isXbox().subscribe(arr2=>{

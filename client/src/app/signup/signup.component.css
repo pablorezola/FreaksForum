@@ -1,21 +1,27 @@
 
-/* html {
-    background-image: url("/server/public/images/videojuegos.png");
-    height: 200vh;
-} */
+
+.sign {
+    background-image: url("https://orig00.deviantart.net/41f5/f/2011/015/6/5/jf_forum_background_2_by_immolation92-d379fsx.png");
+    height: 100vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
 
 h1 {
-    text-align: center;
+    margin-left: 10rem;
+    font-family: 'Hanalei Fill', cursive;
+    color: rgb(32, 49, 94);
 }
 
 .sign{
+    padding-left: 20px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
 }
 
 .frm {
-    margin-top: 2em;
+    margin-top: 1em;
     margin-right: 2em;
 }
 
@@ -33,3 +39,26 @@ h2 {
     text-decoration: underline;
 }
 
+
+.EMAIL{
+    margin-left: 12px;
+    width: 50%;
+}
+
+input{
+    width:100%;
+    margin-top: 2em;
+}
+
+.datepicker-trigger-icon {
+    margin-top: 30px;
+}
+
+.fa-hdd{
+    color: blue;
+}
+
+h2 , h3 {
+    font-family: 'Hanalei Fill', cursive;
+    color: rgb(32, 49, 94);
+}

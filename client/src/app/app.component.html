@@ -17,23 +17,27 @@
                 <clr-icon shape="caret down"></clr-icon>
             </button>
             <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                <li *ngIf="!sessionService.user">
+                <li *ngIf="!sessionService.user" class="FORMS">
+                    <i class="fas fa-user-plus icon" ></i>
                     <a [routerLink]="['/signup']">Sign up</a>
                 </li>
-                <li *ngIf="!sessionService.user">
+                <li *ngIf="!sessionService.user" class="FORMS">
+                    <i class="fas fa-sign-in-alt"></i>
                     <a [routerLink]="['/login']">Log in</a>
                 </li>
-                <li *ngIf="sessionService.user">
+                <li *ngIf="sessionService.user" class="FORMS">
+                    <i class="fas fa-sign-out-alt icon"></i>
                     <a [routerLink]="['/']" (click)="logout()">Log out</a>
                 </li>
-                <li *ngIf="sessionService.user">
+                <li *ngIf="sessionService.user" class="FORMS">
+                    <i class="fas fa-user icon"></i>
                     <a [routerLink]="['/private']">Private</a>
                 </li>
             </clr-dropdown-menu>
         </clr-dropdown>
     </div>
 </header>
-<nav class="subnav">
+<nav *ngIf="sessionService.user" class="subnav">
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" [routerLink]="['/ps4']">PS4</a>

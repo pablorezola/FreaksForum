@@ -14,7 +14,7 @@ export class AppComponent {
 
   user:UserObject;
 
-  constructor(private sessionService:SessionService, private router:Router){
+  constructor(public sessionService:SessionService, public router:Router){
     this.user=this.sessionService.user;
   }
 

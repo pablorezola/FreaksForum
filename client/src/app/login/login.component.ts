@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   closeMessage: string = "";
 
 
-  constructor(private sessionService:SessionService, private router: Router) { }
+  constructor(public sessionService:SessionService, public router: Router) { }
  
   
   ngOnInit() {

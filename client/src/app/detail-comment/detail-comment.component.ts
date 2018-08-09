@@ -17,7 +17,7 @@ export class DetailCommentComponent implements OnInit {
     content: ''
   }
   
-  constructor(private commentService: CommentService,private route:ActivatedRoute,private sessionService:SessionService) { 
+  constructor(public commentService: CommentService,public route:ActivatedRoute,public sessionService:SessionService) { 
     
   }
 

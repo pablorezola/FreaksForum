@@ -12,10 +12,7 @@ interface GameObject {
 @Injectable()
 export class GameService {
 
-    API_URL: string = "https://api-2445582011268.apicast.io/platforms/48"; // PS4
-    API_URL2: string = "https://api-2445582011268.apicast.io/platforms/49"; //XBOX ONE
-    API_URL3: string = "https://api-2445582011268.apicast.io/platforms/130"; //Nintendo Switch
-    API_URL4: string = "https://api-2445582011268.apicast.io/platforms/92"; //Steam
+   
 
     BASE_URL: string = environment.BASEURL;
     constructor(private http: Http) {

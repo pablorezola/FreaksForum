@@ -26,7 +26,7 @@ router.post('/signup', (req, res, next) => {
   
 
   // Check for non empty credentials
-  if (!username || !password || !email || birth<18){
+  if (!username || !password || !email || !birth){
     next(new Error('You must provide valid credentials'));
   }
 

@@ -8,7 +8,7 @@ import { SessionService } from '../../services/session';
 })
 export class LobbyComponent implements OnInit {
 
-  constructor(private chatService: ChatService,private sessionService: SessionService) { }
+  constructor(public chatService: ChatService,public sessionService: SessionService) { }
 
   ngOnInit() {
     

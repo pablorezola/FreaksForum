@@ -10,7 +10,7 @@ import { GameService } from '../../services/api';
 })
 export class NintendoComponent implements OnInit {
   games: any;
-  constructor(private sessionService: SessionService, private Gs: GameService) { }
+  constructor(public sessionService: SessionService, public Gs: GameService) { }
 
   ngOnInit() {
     this.Gs.isNintento().subscribe(arr3 => {

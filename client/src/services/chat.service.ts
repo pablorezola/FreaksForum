@@ -1,6 +1,6 @@
 import { Injectable } from "../../node_modules/@angular/core";
 import * as io from 'socket.io-client';
-
+import {SessionService} from '../services/session'
 interface Message {
   origin:string;
   content:string;
@@ -12,7 +12,7 @@ export class ChatService {
   socket:SocketIOClient.Socket;
   messages:Array<Message> = [];
 
-  constructor(){
+  constructor(private sessionService: SessionService){
 
     // Connect to websocket for chat
     this.socket = io('localhost:3000');
@@ -33,7 +33,7 @@ export class ChatService {
     console.log(`Sending message -> ${message}`);
     this.socket.emit('FreackMessage', message);
     this.messages.push({
-      origin:'._id',
+      origin: this.sessionService.user.username,
       content:message
     });
   }

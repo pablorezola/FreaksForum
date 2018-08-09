@@ -6,7 +6,7 @@ import { Observable } from "../../node_modules/rxjs";
 import { of } from 'rxjs';
 
 
-const {BASEURL} = environment;
+
 
 interface UserObject{
   username:string
@@ -15,7 +15,7 @@ interface UserObject{
 
 @Injectable()
 export class SessionService {
-
+  BASEURL:string = environment.BASEURL;
   user:UserObject;
 
   options:object = {withCredentials:true};
@@ -25,7 +25,7 @@ export class SessionService {
   }
 
   isLogged(){
-    return this.http.get(`${BASEURL}/api/auth/currentuser`,this.options).pipe(
+    return this.http.get(`${this.BASEURL}/api/auth/currentuser`,this.options).pipe(
       map( (res:Response) => {
         this.user = res.json();
         console.log(`Automatically login ${this.user.username}`);
@@ -44,7 +44,7 @@ export class SessionService {
   }
 
   signup(username:string, password:string, email: string, birth: Date): Observable<object>{
-    return this.http.post(`${BASEURL}/api/auth/signup`,{username,password,email,birth},this.options).pipe(
+    return this.http.post(`${this.BASEURL}/api/auth/signup`,{username,password,email,birth},this.options).pipe(
       map( (res:Response) => {
         let data = res.json();
         this.user = data.user;
@@ -55,7 +55,7 @@ export class SessionService {
   }
 
   login(username:string, password:string): Observable<object>{
-    return this.http.post(`${BASEURL}/api/auth/login`,{username,password},this.options).pipe(
+    return this.http.post(`${this.BASEURL}/api/auth/login`,{username,password},this.options).pipe(
       map( (res:Response) => {
         let user = res.json();
         this.user = user;
@@ -66,7 +66,7 @@ export class SessionService {
   }
 
   logout(){
-    return this.http.get(`${BASEURL}/api/auth/logout`,this.options).pipe(
+    return this.http.get(`${this.BASEURL}/api/auth/logout`,this.options).pipe(
       map( (res:Response) => {
         this.user = null;
       }),

@@ -8,7 +8,7 @@ import { GameService } from '../../services/api';
 })
 export class PlaystationComponent implements OnInit {
   games: any;
-  constructor(private sessionService: SessionService, private Gs: GameService) { }
+  constructor(public sessionService: SessionService, public Gs: GameService) { }
 
   ngOnInit() {
     this.Gs.isPs4().subscribe(arr1 => {

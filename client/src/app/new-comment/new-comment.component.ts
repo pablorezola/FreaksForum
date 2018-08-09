@@ -13,7 +13,7 @@ export class NewCommentComponent implements OnInit {
   date: Date;
   error: string;
 
-  constructor(private commentService: CommentService, private router: Router) { }
+  constructor(public commentService: CommentService, public router: Router) { }
 
   ngOnInit() {
   }

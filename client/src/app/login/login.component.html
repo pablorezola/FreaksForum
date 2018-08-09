@@ -1,22 +1,19 @@
-<form>
-  <h2> Login Form </h2>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="username" name="username"/>
-  <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="password" name="password"/>
 
-  <button (click)="login(username,password)"> Log in </button>
-  
-  <clr-alert [clrAlertType]="'alert-success'" (clrAlertClosedChange)="onClose()">
-      <div class="alert-item">
-          <span class="alert-text">
-              you have login!
-          </span>
-      </div>
-  </clr-alert>
-  <div>{{closeMessage}}</div>
-  
-</form>
-<button (click)="socialSignIn('google')">Sign in with Google</button>   
-<p class="error"> {{ error }} </p>
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            <h3 class="welcome">Welcome to FreaksForum</h3>
+        </section>
+        <div class="login-group LG">
+            <input class="username" type="text" [(ngModel)]="username" name="username" id="login_username" placeholder="Username">
+            <input class="password" type="password" [(ngModel)]="password" name="password"  id="login_password" placeholder="Password">
+            <div class="checkbox">
+                <input type="checkbox" id="rememberme">
+                <label for="rememberme">
+                    Remember me
+                </label>
+            </div>
+            <button (click)="login(username,password)"> Log in </button>
+        </div>
+    </form>
+</div>

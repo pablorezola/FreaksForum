@@ -11,7 +11,7 @@ import { SessionService } from '../../services/session';
 export class ListCommentComponent implements OnInit {
   comments:Observable<Array<Object>>;
 
-  constructor(private commentService: CommentService, private router: Router,private sessionService:SessionService) { 
+  constructor(public commentService: CommentService, public router: Router, public sessionService:SessionService) { 
 
   }
 
