@@ -3,12 +3,23 @@ const router = express.Router();
 const igdb = require('igdb-api-node').default;
 const key = process.env.KEY;
 const client = igdb(key);
+const Game = require('../models/Game');
 
 
 router.get('/ps4', (req, res, next) => {
+    //const arr1 = [];
+
+    Game.find({type:"PlayStation"}).then((game)=>{
+        console.log(game)
+        res.json(game)
+    }).catch(error => {
+        console.log(error);
+        throw error;
+
+    }); 
 
     //PS4
-    client.games.toString()
+   /*  client.games.toString();
     client.games({
         ids: [
             2033,
@@ -25,151 +36,194 @@ router.get('/ps4', (req, res, next) => {
             16765,
             6632,
             4756,
-            4754,
-            1887,
-            6030,
-            4755,
-            21729,
-            4071
+
+
         ]
     }, [
             'name',
             'summary',
             'rating',
-            'websites',
-            'screenshots'
+            'screenshots',
         ]).then(response => {
-            console.log(response);
+            arr1.push(response);
+            
+            //mi detalle tesnico
+
+            // arr1.forEach(x => {
+            //     x.body.forEach(y=>{
+            //         console.log(y.name)
+            //         return new Game({
+            //             name: y.name,
+            //             summary: y.summary,
+            //             rating: y.rating,
+            //             screenshots: y.screenshots,
+            //             type:'PlayStation'
+            //         }).save();
+            //     });
+            // });
             res.json(response);
         }).catch(error => {
             console.log(error);
             throw error;
 
-        });
-    });
-    // //XBOX ONE
-     router.get('/xbox', (req, res, next) => {
-     const arr2 = [];
-     client.games({
+        }); */
+});
+// //XBOX ONE
+router.get('/xbox', (req, res, next) => {
+
+    Game.find({type:"Xbox"}).then((game)=>{
+        console.log(game)
+    res.json(game)
+    }).catch(error => {
+        console.log(error);
+        throw error;
+
+    }); 
+
+    //const arr2 = [];
+   /*  client.games.toString();
+    client.games({
         ids: [
-            20907,
-            39046,
-            39044,
-            39047,
-            36144,
-            86225,
-            18113,
-            55121,
-            11215,
-            51385,
-            27376,
-            19889,
-            78754,
-            82120,
-            17520,
-            34812,
-            41605,
-            82376,
+            121,
+            5541,
+            4758,
+            5333,
+            19407,
+            5328,
+            7685,
+            5308,
+            5330,
+            4786,
+            7614,
+            4847,
+            4785,
+            3025,
+            1981,
+            5606,
+            7897,
+            2050,
+
+
         ]
     }, [
             'name',
             'summary',
             'rating',
-            'websites',
             'screenshots',
         ]).then(response => {
-            response.body.forEach(element => {
-            });
             arr2.push(response);
+            
             res.json(response);
         }).catch(error => {
-            console.log(error)
+            console.log(error);
             throw error;
-        });
-    });
-    //N.Switch
-    router.get('/switch', (req, res, next) => {
-        const arr3 = [];
+
+        }); */
+});
+//N.Switch
+router.get('/switch', (req, res, next) => {
+
+    Game.find({type:"Nintendo"}).then((game)=>{
+        console.log(game)
+    res.json(game)
+    }).catch(error => {
+        console.log(error);
+        throw error;
+
+    }); 
+
+    /* const arr3 = [];
+    client.games.toString();
     client.games({
         ids: [
-             11065,
-            15100,
-            14902,
-            15169,
-            15187,
-            3088,
-            23501,
-            15460,
-            15464,
-            11075,
-            25108,
-            9498,
-            11081,
-            15555,
-            15445,
-            14369,
+            6556,
+            11070,
+            86361,
+            38983,
+            64011,
+            11529,
+            19175,
+            28409,
+            7767,
+            1408,
+            1404,
+            27081,
+            19109,
+            27298,
+            47576,
+            26165,
+
+
         ]
     }, [
             'name',
             'summary',
             'rating',
-            'websites',
             'screenshots',
         ]).then(response => {
-            response.body.forEach(element => {
-
-            });
             arr3.push(response);
+            
             res.json(response);
         }).catch(error => {
+            console.log(error);
             throw error;
-        });
-    });
+
+        }); */
+});
 
 
-    // // Steam
-    router.get('/steam', (req, res, next) => {
-        const arr4 = [];
+// // Steam
+router.get('/steam', (req, res, next) => {
+
+    Game.find({type:"Steam"}).then((game)=>{
+        console.log(game)
+    res.json(game)
+    }).catch(error => {
+        console.log(error);
+        throw error;
+
+    }); 
+
+
+
+    /* const arr4 = [];
+    client.games.toString()
     client.games({
         ids: [
-            9767,
-            9911,
-            10737,
-            9707,
-            11584,
-            11587,
-            11586,
-            6781,
-            11646,
-            8390,
-            9649,
-            8993,
-            26868,
-            27140,
-            26363,
-            27194,
-            27207,
-            9066,
-            25295,
-            27337,
-            27339,
-            8767,
+            20395,
+            23850,
+            23888,
+            23942,
+            23943,
+            23993,
+            24050,
+            24053,
+            24440,
+            24441,
+            24445,
+            24446,
+            19293,
+            24481,
+            24642,
+            24646,
+
         ]
     }, [
             'name',
             'summary',
             'rating',
-            'websites',
             'screenshots',
         ]).then(response => {
-            response.body.forEach(element => {
-            });
             arr4.push(response);
+
+
             res.json(response);
         }).catch(error => {
+            console.log(error);
             throw error;
-        });
-     });
+
+        }); */
+});
 
 
 

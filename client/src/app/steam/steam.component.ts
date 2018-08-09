@@ -13,7 +13,7 @@ export class SteamComponent implements OnInit {
 
   ngOnInit() {
     this.Gs.isSteam().subscribe(arr4 => {
-      this.games = arr4.body;
+      this.games = arr4;
      })
   }
 

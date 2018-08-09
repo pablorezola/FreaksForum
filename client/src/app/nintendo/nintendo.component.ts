@@ -14,7 +14,7 @@ export class NintendoComponent implements OnInit {
 
   ngOnInit() {
     this.Gs.isNintento().subscribe(arr3 => {
-      this.games = arr3.body;
+      this.games = arr3;
      })
   }
 

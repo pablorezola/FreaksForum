@@ -12,8 +12,7 @@ export class XboxComponent implements OnInit {
 
   ngOnInit() {
     this.Gs.isXbox().subscribe(arr2=>{
-      this.games = arr2.body;
-      console.log(arr2.body)
+      this.games = arr2;
      })
   }
 
